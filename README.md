@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Role Name
 =========
 
@@ -36,3 +37,7 @@ Author Information
 ------------------
 
 An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+=======
+# ansible-role-drulenium
+Ansible Role for Drulenium
+>>>>>>> 4baf871a698a228d9f7d09827d294c17875ab30c
