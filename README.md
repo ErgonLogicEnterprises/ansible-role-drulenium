@@ -1,8 +1,12 @@
-<<<<<<< HEAD
 Role Name
 =========
 
+<<<<<<< HEAD
 Installs Drulenium dependencies on a server
+=======
+# ansible-role-drulenium
+Ansible Role for Drulenium
+>>>>>>> 2b9092151f39aed4cf36209cddca1a71edc3f62b
 
 Requirements
 ------------
@@ -38,6 +42,5 @@ Author Information
 
 An optional section for the role authors to include contact information, or a website (HTML is not allowed).
 =======
-# ansible-role-drulenium
-Ansible Role for Drulenium
->>>>>>> 4baf871a698a228d9f7d09827d294c17875ab30c
+
+
