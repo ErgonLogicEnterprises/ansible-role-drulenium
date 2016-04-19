@@ -1,2 +1,11 @@
 ---
-# defaults file for ansible-role-drulenium
+# tasks file for ansible-role-drulenium
+drulenium_manage_dependencies: true
+drulenium_dependencies:
+  - xvfb
+  - xauth
+  - imagemagick
+  - iceweasel
+drulenium_install_additional_packages: true
+drulenium_additional_packages:
+  - php-curl

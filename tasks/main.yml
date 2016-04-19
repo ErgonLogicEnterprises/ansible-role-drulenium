@@ -1,2 +1,18 @@
 ---
 # tasks file for ansible-role-drulenium
+- name: Ensure Drulenium dependencies are installed.
+  apt:
+    name: "{{ item }}"
+    state: installed
+  when: (drulenium_manage_dependencies == true) and (ansible_os_family == 'Debian')
+  with_items: drulenium_dependencies
+
+- name: Install additional packages.
+  apt:
+    name: "{{ item }}"
+    state: installed
+  when: (drulenium_install_additional_packages == true) and (ansible_os_family == 'Debian')
+  with_items: drulenium_additional_packages
+
+- name: Imagemagick fix missing
+  shell: sudo apt-get install imagemagick -y --fix-missing
