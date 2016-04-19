@@ -8,4 +8,4 @@ drulenium_dependencies:
   - iceweasel
 drulenium_install_additional_packages: true
 drulenium_additional_packages:
-  - php-curl
+  - php5-curl
