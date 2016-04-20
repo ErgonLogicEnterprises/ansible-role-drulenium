@@ -4,7 +4,7 @@ Role Name
 Installs Drulenium dependencies on a server
 =======
 
-Ansible Role for Drulenium
+Ansible Role for Drulenium with updates for Xenial and PHP7
 
 Requirements
 ------------
