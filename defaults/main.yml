@@ -9,6 +9,6 @@ drulenium_dependencies:
   - htop
 drulenium_install_additional_packages: true
 drulenium_additional_packages:
-  - php5-curl
+#  - php5-curl
 xenial_drulenium_additional_packages:
-  - php-curl
+#  - php-curl
