@@ -18,7 +18,8 @@
   apt:
     name: "{{ item }}"
     state: installed
-  when: ((drulenium_install_additional_packages == true) and (ansible_distribution_version|int >= 16.04))
+  when: >
+    ((drulenium_install_additional_packages == true) and (ansible_distribution_version|int >= 16.04))
   with_items: xenial_drulenium_additional_packages
 
 - name: Imagemagick fix missing
