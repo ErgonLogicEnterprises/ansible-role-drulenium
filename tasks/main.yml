@@ -14,5 +14,5 @@
   when: (drulenium_install_additional_packages == true) and (ansible_os_family == 'Debian')
   with_items: drulenium_additional_packages
 
-- name: Imagemagick fix missing apt
+- name: Imagemagick fix missing
   shell: sudo apt-get install imagemagick -y --fix-missing
