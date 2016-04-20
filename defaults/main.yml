@@ -7,7 +7,7 @@ drulenium_dependencies:
   - imagemagick
   - iceweasel
   - htop
-drulenium_install_additional_packages: true
+drulenium_install_additional_packages: false
 drulenium_additional_packages:
 #  - php5-curl
 xenial_drulenium_additional_packages:
