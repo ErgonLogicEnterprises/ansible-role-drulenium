@@ -2,6 +2,15 @@
 language: python
 python: "2.7"
 
+env:
+  - ANSIBLE_VERSION=1.6
+  - ANSIBLE_VERSION=1.7
+  - ANSIBLE_VERSION=1.8
+#  - ANSIBLE_VERSION=1.9
+  - ANSIBLE_VERSION=2.0
+  - ANSIBLE_VERSION=2.0.0.1
+
+
 # Use the new container infrastructure
 sudo: false
 
