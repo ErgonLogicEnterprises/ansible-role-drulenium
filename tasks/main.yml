@@ -15,4 +15,4 @@
 #  when: (drulenium_install_additional_packages == true) and (ansible_os_family == 'Debian')
 #  with_items: drulenium_additional_packages
 
-- apt: name=imagemagick state=latest install_recommends=true register=imagemagick_install_status
+- apt: name=imagemagick state=present install_recommends=true register=imagemagick_install_status
