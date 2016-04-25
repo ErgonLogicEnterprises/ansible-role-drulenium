@@ -2,12 +2,29 @@
 # tasks file for ansible-role-drulenium
 - name: Ensure Drulenium dependencies are installed.
   apt:
-    name: "{{ item }}"
+    pkg: '{{ item }}'
     state: 'latest'
-  when: (drulenium_manage_dependencies == true) and (ansible_os_family == 'Debian')
-  with_items: drulenium_dependencies
+    install_recommends: no
+  with_items:
+    - '{{ drulenium_dependencies }}'
   register: drulenium_dependencies_install_status
-  changed_when: drulenium_dependencies_install_status.stdout.find("0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded") == -1
+  changed_when: drulenium_dependencies_install_status.stdout.find("0 upgraded, 0 newly installed, 0 to remove") == -1
+#  changed_when: false
+
+- name: Ensure Drulenium additional dependencies are installed.
+  apt:
+    pkg: '{{ item }}'
+    state: 'latest'
+    install_recommends: yes
+  with_items:
+    - '{{ drulenium_additional_packages }}'
+  register: drulenium_additional_packages_install_status
+#  changed_when: drulenium_additional_packages_install_status.stdout.find("All items completed") == -0
+
+- debug: msg="System {{ drulenium_additional_packages_install_status }}"
+
+
+
 
 #- name: Install additional packages.
 #  apt:
@@ -16,7 +33,7 @@
 #  when: (drulenium_install_additional_packages == true) and (ansible_os_family == 'Debian')
 #  with_items: drulenium_additional_packages
 
- - apt: name=imagemagick state=present install_recommends=true
+# - apt: name=imagemagick state=present install_recommends=true
 
 # - name: Make sure PHP5-FPM support is installed
 #  apt:
