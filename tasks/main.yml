@@ -15,6 +15,4 @@
   when: (drulenium_install_additional_packages == true) and (ansible_os_family == 'Debian')
   with_items: drulenium_additional_packages
 
-# - name: Imagemagick fix missing
-# Install latest version of "openjdk-6-jdk" ignoring "install-recommends"
-- apt: name=imagemagick state=latest install_recommends=true
+#- apt: name=imagemagick state=latest install_recommends=true register: imagemagick_install_status
