@@ -3,17 +3,18 @@
 - name: Ensure Drulenium dependencies are installed.
   apt:
     name: "{{ item }}"
-    state: installed
+    state: present
   when: (drulenium_manage_dependencies == true) and (ansible_os_family == 'Debian')
   with_items: drulenium_dependencies
+  register: drulenium_dependencies_install_status
 
 - name: Install additional packages.
   apt:
     name: "{{ item }}"
-    state: installed
+    state: present
   when: (drulenium_install_additional_packages == true) and (ansible_os_family == 'Debian')
   with_items: drulenium_additional_packages
 
-- name: Imagemagick fix missing
-  shell: sudo apt-get install imagemagick -y --fix-missing
-  changed_when: false
+# - name: Imagemagick fix missing
+# Install latest version of "openjdk-6-jdk" ignoring "install-recommends"
+- apt: name=imagemagick state=latest install_recommends=true
