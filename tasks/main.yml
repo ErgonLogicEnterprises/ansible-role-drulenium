@@ -11,6 +11,11 @@
   changed_when: drulenium_dependencies_install_status.stdout.find("0 upgraded, 0 newly installed, 0 to remove") == -1
 #  changed_when: false
 
+- debug:
+    var: drulenium_dependencies_install_status
+
+
+
 - name: Ensure Drulenium additional dependencies are installed.
   apt:
     pkg: '{{ item }}'
@@ -18,11 +23,11 @@
     install_recommends: yes
   with_items:
     - '{{ drulenium_additional_packages }}'
-  register: drulenium_additional_packages_install_status
-#  changed_when: drulenium_additional_packages_install_status.stdout.find("All items completed") == -0
+  register: drulenium_additional_packages_status
+  #changed_when: drulenium_additional_packages_status.stdout.find("All items completed") == -0
 
-- debug: msg="System {{ drulenium_additional_packages_install_status }}"
-
+- debug:
+    var: drulenium_additional_packages_status
 
 
 

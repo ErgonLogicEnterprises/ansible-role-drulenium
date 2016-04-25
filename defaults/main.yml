@@ -6,7 +6,6 @@ drulenium_dependencies:
 #  - imagemagick
   - iceweasel
   - htop
-drulenium_install_additional_packages: true
 drulenium_additional_packages:
   - imagemagick
 #xenial_drulenium_additional_packages:
