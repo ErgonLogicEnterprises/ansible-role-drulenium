@@ -16,3 +16,4 @@
 
 - name: Imagemagick fix missing
   shell: sudo apt-get install imagemagick -y --fix-missing
+  changed_when: false
