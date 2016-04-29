@@ -3,10 +3,8 @@
 drulenium_dependencies:
   - xvfb
   - xauth
-#  - imagemagick
   - iceweasel
   - htop
+  - php5-curl
 drulenium_additional_packages:
   - imagemagick
-#xenial_drulenium_additional_packages:
-#  - php-curl
