@@ -10,7 +10,7 @@
   notify: Restart Apache
   register: drulenium_dependencies_install_status
   changed_when: drulenium_dependencies_install_status.stdout.find("0 upgraded, 0 newly installed, 0 to remove") == -1
-  notify: Restart Apache
+
 
 - name: Ensure Drulenium additional dependencies are installed.
   apt:
